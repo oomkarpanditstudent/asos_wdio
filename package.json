@@ -1,0 +1,20 @@
+{
+  "name": "asos-wdio-automation-framework",
+  "version": "1.0.0",
+  "description": "Automation of Asos Website Customer Journeys",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "WDIO",
+    "Automation",
+    "Mocha",
+    "Chai"
+  ],
+  "author": "Oomkar Pandit",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/cli": "^5.18.6"
+  }
+}
