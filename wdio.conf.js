@@ -1,3 +1,4 @@
+const { TimelineService } = require('wdio-timeline-reporter/timeline-service');
 exports.config = {
     //
     // ====================
@@ -7,6 +8,7 @@ exports.config = {
     // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
     // on a remote machine).
     runner: 'local',
+    hostname: 'localhost',
     //
     // Override default path ('/wd/hub') for chromedriver service.
     path: '/',
@@ -123,8 +125,10 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['spec'],
- 
+    reporters:['spec'],
+
+    
+    
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/

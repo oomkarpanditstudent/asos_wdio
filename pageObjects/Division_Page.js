@@ -7,6 +7,6 @@ class Division_Page {
         this.clothingHover.moveTo();
         this.subMenuDressesLnk.waitForClickable(7000);
         this.subMenuDressesLnk.click();
-        }
+        } 
 }
 module.exports = new Division_Page()

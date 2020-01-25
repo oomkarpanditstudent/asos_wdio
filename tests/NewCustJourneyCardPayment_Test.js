@@ -4,6 +4,7 @@ var Plp_Page = require("../pageObjects/Plp_Page.js");
 var Pdp_Page = require("../pageObjects/Pdp_Page.js");
 var Checkout_Page = require("../pageObjects/Checkout_Page.js");
 var Common_Tasks=require("../utils/Common_Tasks.js");
+const testDataProd=require("../Support/testData.js");
 
 describe("Test Suite - Customer Journeys for asos.com", ()=>{
    
@@ -17,19 +18,19 @@ describe("Test Suite - Customer Journeys for asos.com", ()=>{
         //Pick items from the PLP - PLP Page
         Plp_Page.pickPlpItem() ; // 3 = third item
     //Interactions - Journey Flow - PDP Page 
-        Pdp_Page.pickSize(2);
+        Pdp_Page.pickSize(testDataProd.size);
         Pdp_Page.addToBag() ;
         Pdp_Page.checkout() ;
         assert.equal(browser.getTitle(),Common_Tasks.getPageTitle("checkout")); // asserted that we are on login page
     //Sign In Page / Checkout Start  //Progress  - Checkout Flow - "As New to Asos"
         Checkout_Page.startNewUserCheckout(); 
     //Primary Entry
-        Checkout_Page.enterEmailAddress("lolasoftware@gmail.com"); // [Parameterise it please]
+        Checkout_Page.enterEmailAddress(testDataProd.email); // [Parameterise it please]
         Checkout_Page.addMyEmail();
     //Cust Detail Entry
-        Checkout_Page.enterDeliveryAddress("Oomkar","Pandit","07947454508","24 Sipson Road");
+        Checkout_Page.enterDeliveryAddress(testDataProd.firstName,testDataProd.lastName,testDataProd.mobile,testDataProd.address);
     //Card Payment        
-        Checkout_Page.payByCard("4444333322221111",'10','2020',"Oomkar Pandit QA","123");
+        Checkout_Page.payByCard(testDataProd.cardNumberVisa,testDataProd.cardExpiryMonth,testDataProd.cardExpiryYear,testDataProd.cardName,testDataProd.cvv);
     //Confirm Order
         Checkout_Page.confirmOrder();   
     })
