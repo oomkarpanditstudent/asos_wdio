@@ -1,0 +1,1 @@
+ command: bash -c "git clone https://github.com/oomkarpanditstudent/asos_wdio.git  && cd asos_wdio && npm install && npm run docker_grid"
