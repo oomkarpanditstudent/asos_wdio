@@ -32,7 +32,7 @@ services:
       - HUB_PORT=4444
     ports:
       - "5800:5900"
-    asos-wdio-framework:
+  asos-wdio-framework:
     image: oomkar/asos_wdio
     container_name: wdiofw_docrz_asos
     command: bash -c "npm run docker_grid"
