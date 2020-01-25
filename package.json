@@ -4,7 +4,8 @@
   "description": "Automation of Asos Website Customer Journeys",
   "main": "index.js",
   "scripts": {
-    "test": "wdio"
+    "test": "wdio",
+    "docker_grid": "./node_modules/.bin/wdio wdio.conf.js --hostname 'selenium-hub'"
   },
   "keywords": [
     "WDIO",
@@ -15,7 +16,6 @@
   "author": "Oomkar Pandit",
   "license": "ISC",
   "devDependencies": {
-    "wdio-html-format-reporter": "~0.2.7",
     "@rpii/wdio-html-reporter": "~0.8.0",
     "@wdio/cli": "^5.18.6",
     "@wdio/local-runner": "^5.18.6",
@@ -23,7 +23,9 @@
     "@wdio/spec-reporter": "^5.18.6",
     "@wdio/sync": "^5.18.6",
     "chromedriver": "^79.0.0",
-    "wdio-chromedriver-service": "^5.0.2"
+    "selenium-standalone": "^6.17.0",
+    "wdio-chromedriver-service": "^5.0.2",
+    "wdio-html-format-reporter": "~0.2.7"
   },
   "dependencies": {
     "log4js": "^6.1.0",
