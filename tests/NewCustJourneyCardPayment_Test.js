@@ -30,7 +30,7 @@ describe("Test Suite - Customer Journeys for asos.com", ()=>{
     //Cust Detail Entry
         Checkout_Page.enterDeliveryAddress(testDataProd.firstName,testDataProd.lastName,testDataProd.mobile,testDataProd.address);
     //Card Payment        
-        Checkout_Page.payByCard(testDataProd.cardNumberVisa,testDataProd.cardExpiryMonth,testDataProd.cardExpiryYear,testDataProd.cardName);
+        Checkout_Page.payByCard(testDataProd.cardNumberVisa,testDataProd.cardExpiryMonth,testDataProd.cardExpiryYear,testDataProd.cardName,testDataProd.cvv);
     //Confirm Order
         Checkout_Page.confirmOrder();   
     })
