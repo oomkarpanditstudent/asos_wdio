@@ -1,6 +1,7 @@
 //how to use inheritence, define classes and initiating them, how to extend etc
 // how to parameterised getter?
 // assert.equal(browser.getTitle(), Common_Tasks.getPageTitle("women"));//WHY IS THIS NOT WORKING
+//how to merge master into own branch. I did git pull origin master- it deleted all my files.
 
 class Page{
     constructor(){
