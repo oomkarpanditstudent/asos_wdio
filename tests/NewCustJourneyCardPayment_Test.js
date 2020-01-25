@@ -4,7 +4,7 @@ var Plp_Page = require("../pageObjects/Plp_Page.js");
 var Pdp_Page = require("../pageObjects/Pdp_Page.js");
 var Checkout_Page = require("../pageObjects/Checkout_Page.js");
 var Common_Tasks=require("../utils/Common_Tasks.js");
-const testDataProd=require("../testData/testData.js");
+const testDataProd=require("../Support/testData.js");
 
 describe("Test Suite - Customer Journeys for asos.com", ()=>{
    

@@ -10,6 +10,5 @@
     cardName:"Visa Card Owner",
     cvv:"123",
     size:"2", 
-
 }
 module.exports =  testDataProd
