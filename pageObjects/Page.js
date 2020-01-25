@@ -2,6 +2,7 @@
 // how to parameterised getter?
 // assert.equal(browser.getTitle(), Common_Tasks.getPageTitle("women"));//WHY IS THIS NOT WORKING
 //how to merge master into own branch. I did git pull origin master- it deleted all my files.
+//import export of classes and consts? constructors?
 
 class Page{
     constructor(){
