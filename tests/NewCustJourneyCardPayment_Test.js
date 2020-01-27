@@ -1,9 +1,9 @@
-var Home_Page = require("../pageObjects/Home_Page.js");
-var Division_Page = require("../pageObjects/Division_Page.js");
-var Plp_Page = require("../pageObjects/Plp_Page.js");
-var Pdp_Page = require("../pageObjects/Pdp_Page.js");
-var Checkout_Page = require("../pageObjects/Checkout_Page.js");
-var Common_Tasks=require("../utils/Common_Tasks.js");
+var home_page = require("../pageObjects/home_Page.js");
+var division_page = require("../pageObjects/division_Page.js");
+var plp_page = require("../pageObjects/plp_Page.js");
+var pdp_page = require("../pageObjects/pdp_Page.js");
+var checkout_page = require("../pageObjects/checkout_Page.js");
+var common_tasks=require("../utils/common_tasks.js");
 const testDataProd=require("../Support/testData.js");
 
 describe("Test Suite - Customer Journeys for asos.com", ()=>{
@@ -11,28 +11,28 @@ describe("Test Suite - Customer Journeys for asos.com", ()=>{
    it("Test Case 1 - Browse to Women/Dresses and Continue Cust Journey all the way to processing payment", ()=>{   
     //Open site and go to Women Category - From Home Page
         browser.url('/');
-        assert.strictEqual(browser.getTitle(), Common_Tasks.getPageTitle("home"));
-        Home_Page.openWomenTopNav(); 
+        assert.strictEqual(browser.getTitle(), common_tasks.getPageTitle("home"));
+        home_page.openWomenTopNav(); 
     // Hover to Clothing and go to Dresses - Category Page
-        Division_Page.selectSubMenuDresses();
+        division_page.selectSubMenuDresses();
         //Pick items from the PLP - PLP Page
-        Plp_Page.pickPlpItem() ; // 3 = third item
+        plp_page.pickPlpItem() ; // 3 = third item
     //Interactions - Journey Flow - PDP Page 
-        Pdp_Page.pickSize(testDataProd.size);
-        Pdp_Page.addToBag() ;
-        Pdp_Page.checkout() ;
-        assert.equal(browser.getTitle(),Common_Tasks.getPageTitle("checkout")); // asserted that we are on login page
+        pdp_page.pickSize(testDataProd.size);
+        pdp_page.addToBag() ;
+        pdp_page.checkout() ;
+        assert.equal(browser.getTitle(),common_tasks.getPageTitle("checkout")); // asserted that we are on login page
     //Sign In Page / Checkout Start  //Progress  - Checkout Flow - "As New to Asos"
-        Checkout_Page.startNewUserCheckout(); 
+        checkout_page.startNewUserCheckout(); 
     //Primary Entry
-        Checkout_Page.enterEmailAddress(testDataProd.email); // [Parameterise it please]
-        Checkout_Page.addMyEmail();
+        checkout_page.enterEmailAddress(testDataProd.email); // [Parameterise it please]
+        checkout_page.addMyEmail();
     //Cust Detail Entry
-        Checkout_Page.enterDeliveryAddress(testDataProd.firstName,testDataProd.lastName,testDataProd.mobile,testDataProd.address);
+        checkout_page.enterDeliveryAddress(testDataProd.firstName,testDataProd.lastName,testDataProd.mobile,testDataProd.address);
     //Card Payment        
-        Checkout_Page.payByCard(testDataProd.cardNumberVisa,testDataProd.cardExpiryMonth,testDataProd.cardExpiryYear,testDataProd.cardName,testDataProd.cvv);
+        checkout_page.payByCard(testDataProd.cardNumberVisa,testDataProd.cardExpiryMonth,testDataProd.cardExpiryYear,testDataProd.cardName,testDataProd.cvv);
     //Confirm Order
-        Checkout_Page.confirmOrder();   
+        checkout_page.confirmOrder();   
     })
 
 })
