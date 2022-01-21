@@ -28,7 +28,7 @@
     "wdio-html-format-reporter": "~0.2.7"
   },
   "dependencies": {
-    "log4js": "^6.1.0",
+    "log4js": "^6.4.0",
     "pngjs": "^3.4.0",
     "source-map-support": "^0.5.16",
     "wdio-timeline-reporter": "^5.1.2"
